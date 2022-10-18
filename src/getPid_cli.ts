@@ -2,8 +2,14 @@
 import { GetPidCmd } from "./getPidCmd";
 
 export function getPid() {
-    const getPidCmd = new GetPidCmd();
-    getPidCmd.execCmd();
+    try {
+        const getPidCmd = new GetPidCmd();
+        const pid = getPidCmd.execCmd();
+        console.log(`port ${getPidCmd.getPort()} is being used by pid: ${pid}`);
+    } catch (error) {
+        console.log(`Error: ${error.message}`);
+    }
+
 }
 
 

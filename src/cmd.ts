@@ -8,12 +8,19 @@ export abstract class Cmd extends API {
 
     constructor(requiredCmdOptions?: CmdOption[], optionalCmdOptions?: CmdOption[]) {
         super();
-        for(let option of requiredCmdOptions) {
-            this.updateRequiredOptions(option.arg, option.description);
+
+        if (requiredCmdOptions) {
+            for(let option of requiredCmdOptions) {
+                this.updateRequiredOptions(option.arg, option.description);
+            }
         }
-        for(let option of optionalCmdOptions) {
-            this.updateOptions(option.arg, option.description);
+
+        if (optionalCmdOptions) {
+            for(let option of optionalCmdOptions) {
+                this.updateOptions(option.arg, option.description);
+            }
         }
+
         program.parse();
         this.options = program.opts();
     }

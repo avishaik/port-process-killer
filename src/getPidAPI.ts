@@ -16,12 +16,12 @@ export class GetPidAPI extends API {
                 const cmdLines = this.runCmd(this.cmdString).split(`\n`);
                 for(let cmdLine of  cmdLines) {
                     if (portExist(cmdLine, this.port)) {
-                        return retrievePidFromCmd(cmdLine);
+                        return retrievePidFromCmd(cmdLine.trim());
                     }
                 }
                 return CommandResponse.FAIL;
             } catch (error) {
-                console.log(`Could not find  pid by port #${this.port}`);
+                throw Error(`Could not find pid by port #${this.port}`);
             }
         }
 }

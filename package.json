@@ -1,16 +1,25 @@
 {
-  "name": "port-killer",
+  "name": "port-process-killer",
   "version": "1.0.0",
   "author": "Avishai Klaiman",
   "license": "MIT",
   "main": "out/src/index.js",
-  "bin": "out/src/cli.js",
+  "bin": 
+    "out/src/getPid_cli.js",
   "scripts": {
     "build": "tsc -p .",
     "start": "npm run build -- -w",
-    "run-cli": "npx ts-node ./src/cli.ts --port 3001",
+    "run-cli": "npx ts-node ./src/killProcess_cli.ts --port 3001 -f",
     "test": "nyc ./node_modules/.bin/_mocha 'test/**/*.ts'"
   },
+  "keywords": [
+    "port",
+    "process",
+    "pid",
+    "kill",
+    "port",
+    "port-process-killer"
+  ],
   "dependencies": {
     "args": "^5.0.3",
     "child_process": "^1.0.2",

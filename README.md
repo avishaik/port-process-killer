@@ -23,77 +23,80 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
+## About <a name = "about"></a>
 
 A process killer by port number app.</br>
-Can be used as API and CLI.
+Can be used as an API and CLI.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
 
 ### Install
 
 ```
-npm install --save port-killer
+npm install --save port-process-killer
 ```
 
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+## Running tests <a name = "tests"></a>
 
 ```
-Give an example
+npm run test
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+### Use as API <a name="use_api"></a>
 
-## 🚀 Deployment <a name = "deployment"></a>
+You can use as an API to find out the pid that is using the port.
+```
+  import { getPid } from "port-process-killer";
 
-Add additional notes about how to deploy this on a live system.
+  const pid = getPid(8080);
+  console.log(`pid is: ${pid}`);
+```
+API example to kill the process that is being used by a port
 
-## ⛏️ Built Using <a name = "built_using"></a>
+```
+  import { portKill } from "port-process-killer";
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+  portKill(8080);
+```
+If this did kill the process using the desired port, you can use the `-f` parameter which will use a `wmic delete` command which is stronger than the `taskkill` command
+
+```
+  import { portKill } from "port-process-killer";
+
+  portKill(8080, -f);
+```
+
+### Use as CLI <a name="use_cmd"></a>
+
+```
+npm install --global port-process-killer
+```
+
+```
+killProcess --port 8080
+```
+
+Use with force
+
+```
+killProcess --port 8080 -f
+```
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- Creator: [@avishaik](https://github.com/avishaik)
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+Thanks for using port-process-killer, hope it does a killer job for you!
