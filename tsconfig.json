@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"allowJs": false,
+		"lib": [
+			"es7",
+			"dom"
+		],
+		"listEmittedFiles": false,
+		"listFiles": false,
+		"module": "commonjs",
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"outDir": "./out",
+		"removeComments": true,
+		"experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+		"rootDir": ".",
+		"rootDirs": [
+			"./src",
+			"./test"
+		],
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"target": "es2019",
+		"traceResolution": false,
+		"declaration": true,
+		"alwaysStrict": true
+	},
+	"include": [
+		"./src/**/*",
+		"./test/**/*"
+	],
+	"exclude": [
+		"./tests/",
+		"./node_modules/",
+		"./dist/"
+	  ],
+}
