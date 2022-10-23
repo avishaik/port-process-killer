@@ -1,5 +1,3 @@
-import { execSync } from "child_process";
-
 export function getTaskKillCmd(pid: number): string {
     return `TaskKill /F /T /PID ${pid}`;
 }
@@ -23,7 +21,6 @@ export function portExist(cmdLine: string, port: number): boolean {
 export function retrievePidFromCmd(cmdLine: string): number {
     const pidNum = cmdLine.match(/[0-9]+$/);
     if (pidNum) {
-        console.log(pidNum);
         return parseInt(pidNum[0]);
     }
 
