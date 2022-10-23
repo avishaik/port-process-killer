@@ -1,12 +1,17 @@
 {
   "name": "port-process-killer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Avishai Klaiman",
   "license": "MIT",
   "main": "out/src/index.js",
-  "bin" : {
-      "getPid" : "out/src/getPid.js",
-      "killProcess": "out/src/killProcess.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avishaik/port-process-killer.git"
+  },
+  "homepage": "https://github.com/avishaik/port-process-killer",
+  "bin": {
+    "getPid": "bin/src/getPid_cli.js",
+    "killProcess": "bin/src/killProcess_cli.js"
   },
   "scripts": {
     "build": "tsc -p .",
@@ -33,7 +38,7 @@
     "@types/args": "^5.0.0",
     "@types/chai": "^4.3.3",
     "@types/mocha": "^10.0.0",
-    "@types/node": "^18.8.4",
+    "@types/node": "^18.11.3",
     "@types/sinon": "^10.0.13",
     "chai": "^4.3.6",
     "mocha": "^10.0.0",

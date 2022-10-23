@@ -39,6 +39,7 @@ jspm_packages/
 # TypeScript
 typings/
 out/
+bin/
 
 # TypeScript cache
 *.tsbuildinfo
