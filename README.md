@@ -1,6 +1,6 @@
 # port-process-killer
 
-A process killer by port number app.
+A process killer by port number tool.
 Can be used as an API and CLI.
 
 
@@ -28,7 +28,7 @@ API example to kill the process that is being used by a port
 
   portKill(8080);
 ```
-If this did kill the process using the desired port, you can use the `-f` parameter which will use a `wmic delete` command which is stronger than the `taskkill` command
+If the process was not killed after running the command, you can add the `-f` parameter which will use a `wmic delete` command which is stronger than the `taskkill` command.
 
 ```
   import { portKill } from "port-process-killer";
@@ -46,7 +46,7 @@ npm install --global port-process-killer
 killProcess --port 8080
 ```
 
-Use with force
+Use with force (wmic delete)
 
 ```
 killProcess --port 8080 -f

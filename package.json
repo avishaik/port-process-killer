@@ -1,6 +1,6 @@
 {
   "name": "port-process-killer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Avishai Klaiman",
   "license": "MIT",
   "main": "out/src/index.js",
